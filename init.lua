@@ -32,6 +32,8 @@ require("lazy").setup({
     { 'nvim-telescope/telescope.nvim', tag = '0.1.8' },
     { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
     { 'Bekaboo/deadcolumn.nvim' },
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    {'beauwilliams/statusline.lua'},
     {
   "folke/which-key.nvim",
   event = "VeryLazy",
@@ -106,7 +108,10 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- Key mapping for Nvim Tree
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true,desc = 'Nvim Tree Open' })
+
+-- Key mapping for terminal
+vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, silent = true,desc = 'Nvim Terminal' })
 
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])

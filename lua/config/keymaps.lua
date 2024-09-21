@@ -7,5 +7,7 @@ vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent
 
 
 
-vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, silent = true, desc = 'Horizontal Split' })
-vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, silent = true, desc = 'Vertical Split' })
+vim.keymap.set('n', '<leader>wh', ':split<CR>', { noremap = true, silent = true, desc = 'Horizontal Split' })
+vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { noremap = true, silent = true, desc = 'Vertical Split' })
+
+vim.keymap.set('n', '<leader>wd', ':q<CR>', { noremap = true, silent = true, desc = 'Vertical Split' })

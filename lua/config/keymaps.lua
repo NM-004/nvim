@@ -1,4 +1,3 @@
-print("hello from keymaps")
 
 vim.g.mapleader = " "
 

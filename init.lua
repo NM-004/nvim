@@ -1,9 +1,6 @@
 require("config")
 
 
-vim.opt.relativenumber = true
-vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamedplus"
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

@@ -1,6 +1,10 @@
 return {
   { "nvim-tree/nvim-tree.lua",
-      requires = { "nvim-tree/nvim-web-devicons" }, -- Optional, for file icons
+      requires = { 
+          "nvim-tree/nvim-web-devicons",
+          "nvim-lua/plenary.nvim",
+      },
+-- Optional, for file icons
       config = function()
         require("nvim-tree").setup({
           view = {

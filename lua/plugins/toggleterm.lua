@@ -8,8 +8,8 @@ return {
       direction = 'float',      -- Floating terminal
       float_opts = {
         border = 'curved',      -- You can change border style ('single', 'double', 'shadow', 'curved')
-        width = 80,             -- Set the width of the floating window
-        height = 20,            -- Set the height of the floating window
+        width = 130,             -- Set the width of the floating window
+        height = 40,            -- Set the height of the floating window
         winblend = 10,          -- Optional transparency
       }
     })

@@ -15,7 +15,7 @@ return {
     })
 
     -- Map <leader>t to toggle the floating terminal
-    vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>', { 
+    vim.keymap.set('n', '<leader>/', ':ToggleTerm<CR>', { 
       noremap = true, 
       silent = true, 
       desc = 'Toggle Floating Terminal' 

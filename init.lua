@@ -1,3 +1,5 @@
+require("config")
+
 vim.g.mapleader = " "
 
 vim.opt.relativenumber = true
@@ -158,11 +160,10 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
--- Key mapping for Nvim Tree
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true,desc = 'Nvim Tree Open' })
-
 -- Key mapping for terminal
 vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, silent = true,desc = 'Nvim Terminal' })
 
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+
+

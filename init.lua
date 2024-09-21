@@ -19,9 +19,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Set local leader
-vim.g.maplocalleader = "\\"
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -145,7 +142,8 @@ require("lazy").setup({
     },
   },
   install = { colorscheme = { "catppuccin" } },
-  checker = { enabled = true },
+  checker = { enabled = false,
+  	notify = false,},
 })
 
 

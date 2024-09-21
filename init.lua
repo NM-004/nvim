@@ -1,6 +1,5 @@
 require("config")
 
-vim.g.mapleader = " "
 
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"

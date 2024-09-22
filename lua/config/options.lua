@@ -7,3 +7,5 @@ vim.opt.shiftwidth = 4    -- Number of spaces to use for each indentation level
 vim.opt.expandtab = true  -- Convert tabs to spaces
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
+vim.opt.autoindent = true
+vim.opt.smartindent = true

@@ -29,5 +29,4 @@ key.set('n', '<leader>ls', ':Leet submit<CR>',{desc = 'Leet submit'})
 
 -- Key mapping for cut paste
 key.set('v', '<C-c>', '"+y', {desc = 'Copy text'})
-key.set('v', '<C-v>', '"*p',{desc = 'paste text'})
-
+key.set('v', '<C-v>', '"*p', {desc = 'past from clipboard'})

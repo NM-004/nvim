@@ -25,3 +25,9 @@ key.set('n', '<leader>ll', ':Leet lang<CR>',{desc = 'Leet language'})
 key.set('n', '<leader>lr', ':Leet run<CR>',{desc = 'Leet run'})
 key.set('n', '<leader>lt', ':Leet test<CR>',{desc = 'Leet test'})
 key.set('n', '<leader>ls', ':Leet submit<CR>',{desc = 'Leet submit'})
+
+
+-- Key mapping for cut paste
+key.set('v', '<C-c>', '"+y', {desc = 'Copy text'})
+key.set('v', '<C-v>', '"*p',{desc = 'paste text'})
+

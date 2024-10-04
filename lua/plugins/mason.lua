@@ -22,7 +22,6 @@ return {
 				"pyright",
 				"ast_grep",
 				"clangd",
-				"java_language_server",
 				"ltex",
 				"lua_ls",
 				"markdown_oxide",

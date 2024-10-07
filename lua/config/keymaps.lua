@@ -31,3 +31,8 @@ key.set("v", "<C-v>", '"*p', { desc = "past from clipboard" })
 key.set("n", "<leader>ps", ":PomodoroStart<CR>", { desc = "pomodoro start" })
 key.set("n", "<leader>pu", ":PomodoroUI<CR>", { desc = "pomodoro UI" })
 key.set("n", "<leader>px", ":PomodoroStop<CR>", { desc = "pomodoro stop" })
+
+-- key mapping for mason
+key.set("n", "<leader>Mu", ":Mason<CR>", { desc = "Mason UI" })
+key.set("n", "<leader>MI", ":MasonInstall<CR>", { desc = "Mason Install" })
+key.set("n", "<leader>MU", ":MasonUpdate<CR>", { desc = "Mason UI" })

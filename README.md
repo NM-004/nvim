@@ -36,4 +36,3 @@
 4 directories, 25 files
 
 ```
-This is my neoconfig

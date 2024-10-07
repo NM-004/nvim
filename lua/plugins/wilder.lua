@@ -8,7 +8,14 @@ return {
 				modes = { ":", "/", "?" },
 			})
 
-			-- Add more configurations here if needed
+			-- add more configurations here if needed
+			wilder.set_option(
+				"renderer",
+				wilder.wildmenu_renderer({
+					-- highlighter applies highlighting to the candidates
+					highlighter = wilder.basic_highlighter(),
+				})
+			)
 		end,
 	},
 }

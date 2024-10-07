@@ -1,7 +1,7 @@
-## This is my neovim config. 
-
+## This is my neovim config.
 
 ### Config Structure
+
 ```
 .
 ├── README.md
@@ -36,3 +36,4 @@
 4 directories, 25 files
 
 ```
+This is my neoconfig

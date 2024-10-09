@@ -36,3 +36,12 @@ key.set("n", "<leader>px", ":PomodoroStop<CR>", { desc = "pomodoro stop" })
 key.set("n", "<leader>Mu", ":Mason<CR>", { desc = "Mason UI" })
 key.set("n", "<leader>MI", ":MasonInstall<CR>", { desc = "Mason Install" })
 key.set("n", "<leader>MU", ":MasonUpdate<CR>", { desc = "Mason UI" })
+
+-- Key mapping for Mpv
+key.set("n", "<leader>mpv", ":MpvToggle<CR>", { desc = "toggle mpv" })
+
+--Key mapping for CodeSnap
+key.set("v", "<leader>snap",":CodeSnapSave<CR>",{desc = "Code Snap and save"})
+
+--Key mapping for Glow
+key.set("n","<leader>md",":Glow<CR>",{desc = "Markdown preview"})

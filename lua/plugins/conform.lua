@@ -20,6 +20,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+                java = {"prettier"},
 				bash = { "shfmt" },
 			},
 			format_on_save = {

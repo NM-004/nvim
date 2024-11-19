@@ -38,10 +38,18 @@ key.set("n", "<leader>MI", ":MasonInstall<CR>", { desc = "Mason Install" })
 key.set("n", "<leader>MU", ":MasonUpdate<CR>", { desc = "Mason UI" })
 
 -- Key mapping for Mpv
-key.set("n", "<leader>mpv", ":MpvToggle<CR>", { desc = "toggle mpv" })
+key.set("n", "<leader>mpvt", ":MpvToggle<CR>", { desc = "toggle mpv" })
 
 --Key mapping for CodeSnap
-key.set("v", "<leader>snap",":CodeSnapSave<CR>",{desc = "Code Snap and save"})
+key.set("v", "<leader>snap", ":CodeSnapSave<CR>", { desc = "Code Snap and save" })
 
 --Key mapping for Glow
-key.set("n","<leader>md",":Glow<CR>",{desc = "Markdown preview"})
+key.set("n", "<leader>md", ":Glow<CR>", { desc = "Markdown preview" })
+
+--Key mapping for noice (Notifications)
+key.set("n", "<leader>nl", function()
+	require("noice").cmd("last")
+end)
+key.set("n", "<leader>nd", function()
+	require("noice").cmd("dismiss")
+end)

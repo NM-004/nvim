@@ -41,7 +41,7 @@ key.set("n", "<leader>MU", ":MasonUpdate<CR>", { desc = "Mason UI" })
 key.set("n", "<leader>mpvt", ":MpvToggle<CR>", { desc = "toggle mpv" })
 
 --Key mapping for CodeSnap
-key.set("v", "<leader>snap", ":CodeSnapSave<CR>", { desc = "Code Snap and save" })
+--key.set("v", "<leader>C", ":CodeSnapSave<CR>", { desc = "Code Snap and save" })
 
 --Key mapping for Glow
 key.set("n", "<leader>md", ":Glow<CR>", { desc = "Markdown preview" })

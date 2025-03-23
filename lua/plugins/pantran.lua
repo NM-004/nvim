@@ -1,3 +1,0 @@
-return {
-	"potamides/pantran.nvim",
-}

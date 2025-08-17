@@ -12,13 +12,7 @@ require('mason-tool-installer').setup({
 vim.lsp.config('lua_ls', {
   cmd = {'lua-language-server'},
   filetypes = {'lua'},
-  root_markers = {'.luarc.json', '.luarc.jsonc'},
-})
-
-
-vim.lsp.config('ts_ls',{
-	cmd = {'typescript-language-server', '--stdio'},
-	settings = {
+  settings = {
 		Lua = {
 			runtime = {
 				version = "LuaJIT",
@@ -37,6 +31,12 @@ vim.lsp.config('ts_ls',{
 			},
 		},
 	},
+  root_markers = {'.luarc.json', '.luarc.jsonc'},
+})
+
+
+vim.lsp.config('ts_ls',{
+	cmd = {'typescript-language-server', '--stdio'},
   filetypes = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact'},
   root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git'})
 })

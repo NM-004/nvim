@@ -86,16 +86,15 @@ require("blink.cmp").setup({
 		documentation = { 
 			auto_show = true,
 			auto_show_delay_ms = 500
-		}
-	},
-	menu = {
-		auto_show = true,
-		draw = {
-			treesitter = {'lsp'},
-			columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
-		}
-	}
-})
+		},
+		menu = {
+			draw = {
+				treesitter = { "lsp" },
+				columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind" } },				}
+			}
+
+		},
+	})
 
 -- Global diagnostic configuration
 --vim.diagnostic.config({

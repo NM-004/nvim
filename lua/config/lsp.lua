@@ -5,7 +5,8 @@ require('mason-tool-installer').setup({
 		"lua_ls",
 		"stylua",
 		"ts_ls",
-		"pyright"
+		"pyright",
+		"clangd"
 	}
 })
 
@@ -37,19 +38,26 @@ vim.lsp.config('lua_ls', {
 
 vim.lsp.config('ts_ls',{
 	cmd = {'typescript-language-server', '--stdio'},
-  filetypes = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact'},
+  filetypes = {'ts', 'js', 'typescriptreact', 'javascriptreact'},
   root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git'})
 })
 
 vim.lsp.config('pyright',{
 	cmd = {'pyright'},
-        filetypes = {'python','python3'},
+        filetypes = {'py'},
 	root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
 })
 
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('pyright')
+vim.lsp.config('clangd', {
+	cmd = {'clangd'},
+	filetypes = {'c', 'cpp'},
+	root_markers = {'.clangd', 'compile_commands.json'}	
+})
+
+
+--vim.lsp.enable('lua_ls')
+--vim.lsp.enable('ts_ls')
+--vim.lsp.enable('pyright')
 
 --  vim.api.nvim_create_autocmd('LspAttach', {
 --      group = vim.api.nvim_create_augroup('my.lsp', {}),

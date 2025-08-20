@@ -38,20 +38,26 @@ vim.lsp.config('lua_ls', {
 
 vim.lsp.config('ts_ls',{
 	cmd = {'typescript-language-server', '--stdio'},
-  filetypes = {'ts', 'js', 'typescriptreact', 'javascriptreact'},
+  filetypes = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact'},
   root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git'})
 })
 
 vim.lsp.config('pyright',{
-	cmd = {'pyright'},
-        filetypes = {'py'},
-	root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
+	cmd = { 'pyright' },
+	--cmd = {'pyright'},
+        filetypes = {'python'},
+	--root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
 })
 
 vim.lsp.config('clangd', {
 	cmd = {'clangd'},
 	filetypes = {'c', 'cpp'},
 	root_markers = {'.clangd', 'compile_commands.json'}	
+})
+
+vim.lsp.config('pylsp', {
+	cmd = {'pylsp'},
+	filetypes = {'python'},
 })
 
 
@@ -90,3 +96,41 @@ require("blink.cmp").setup({
 		}
 	}
 })
+
+-- Global diagnostic configuration
+--vim.diagnostic.config({
+--  virtual_text = {
+--    prefix = '●', -- Could be '■', '▎', '●', etc.
+--    spacing = 4,
+--    severity = { min = vim.diagnostic.severity.INFO }, -- Show from INFO and above
+--  },
+--  signs = true,          -- Show signs in the sign column
+--  underline = false,      -- Underline problematic code
+--  update_in_insert = false, -- Don't update diagnostics while inserting
+--  severity_sort = true,  -- Sort diagnostics by severity
+--  float = {
+--    focusable = false,   -- Floating window not focusable
+--    style = "minimal",
+--    border = "rounded",
+--    source = "if_many",   -- Show source of diagnostic
+--    header = "",
+--    prefix = "",
+--  },
+--})
+
+-- Optionally, you can customize signs icons
+--local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+--for type, icon in pairs(signs) do
+--  local hl = "DiagnosticSign" .. type
+--  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+--end
+
+vim.diagnostic.config({
+	underline = false
+})
+
+vim.keymap.set('n', '<leader>d', function()
+  local new_config = not vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = 'Toggle diagnostic virtual_lines' })
+

@@ -81,7 +81,7 @@ require("blink.cmp").setup({
 	signature = { enabled = true },
 	completion = {
 		list = {
-			selection = { preselect = true, auto_insert = true }
+			selection = { preselect = false, auto_insert = false }
 		},
 		documentation = { 
 			auto_show = true,

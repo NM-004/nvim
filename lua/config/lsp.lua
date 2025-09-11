@@ -6,7 +6,8 @@ require('mason-tool-installer').setup({
 		"stylua",
 		"ts_ls",
 		"pyright",
-		"clangd"
+		"clangd",
+		"pylsp"
 	}
 })
 
@@ -59,6 +60,7 @@ vim.lsp.config('pylsp', {
 	cmd = {'pylsp'},
 	filetypes = {'python'},
 })
+
 
 
 --vim.lsp.enable('lua_ls')

@@ -7,7 +7,9 @@ require('mason-tool-installer').setup({
 		"ts_ls",
 		"pyright",
 		"clangd",
-		"pylsp"
+        --"pylsp",
+        "docker-language-server",
+        "json-lsp"
 	}
 })
 
@@ -50,16 +52,30 @@ vim.lsp.config('pyright',{
 	--root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
 })
 
+vim.lsp.config('docker-language-server',{
+	cmd = { 'docker-language-server', 'start' },
+	--cmd = {'pyright'},
+        filetypes = {'Dockerfile'},
+	--root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
+})
+
+vim.lsp.config('json-lsp',{
+	--cmd = { 'docker-language-server', 'start' },
+	--cmd = {'pyright'},
+        filetypes = {'json'},
+	--root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
+})
+
 vim.lsp.config('clangd', {
 	cmd = {'clangd'},
 	filetypes = {'c', 'cpp'},
 	root_markers = {'.clangd', 'compile_commands.json'}	
 })
 
-vim.lsp.config('pylsp', {
-	cmd = {'pylsp'},
-	filetypes = {'python'},
-})
+--vim.lsp.config('pylsp', {
+--	cmd = {'pylsp'},
+--	filetypes = {'python'},
+--})
 
 
 

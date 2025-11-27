@@ -9,7 +9,8 @@ require('mason-tool-installer').setup({
 		"clangd",
         --"pylsp",
         "docker-language-server",
-        "json-lsp"
+        "json-lsp",
+        "tailwindcss-language-server"
 	}
 })
 
@@ -41,6 +42,12 @@ vim.lsp.config('lua_ls', {
 
 vim.lsp.config('ts_ls',{
 	cmd = {'typescript-language-server', '--stdio'},
+  filetypes = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact'},
+  root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git'})
+})
+
+vim.lsp.config('tailwindcss-language-server',{
+	cmd = {'tailwindcss-language-server', '--stdio'},
   filetypes = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact'},
   root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git'})
 })

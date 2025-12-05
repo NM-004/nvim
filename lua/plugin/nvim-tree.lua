@@ -8,7 +8,8 @@ return {
     config = function()
         require("nvim-tree").setup({
             filters = {
-                dotfiles = true,
+                dotfiles = false,
+                git_ignored = false,
             }
         })
     end,

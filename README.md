@@ -1,7 +1,7 @@
 # My neovim config.
 
 ## Requirements:-
-
+- [XClip](https://github.com/astrand/xclip)
 - [Neovim](https://neovim.io) >= 0.10.0
 - [Git](https://git-scm.com)
 - [NerdFont](https://www.nerdfonts.com/)

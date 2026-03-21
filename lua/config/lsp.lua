@@ -52,11 +52,10 @@ vim.lsp.config('tailwindcss-language-server',{
     root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git'})
 })
 
-vim.lsp.config('pyright',{
-    cmd = { 'pyright' },
-    --cmd = {'pyright'},
-    filetypes = {'python'},
-    --root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
+vim.lsp.config('pyright', {
+    cmd = { 'pyright-langserver', '--stdio' },  -- this is the correct cmd
+    filetypes = { 'python' },
+    root_markers = { 'pyrightconfig.json', 'pyproject.toml', 'setup.py', '.git' },
 })
 
 vim.lsp.config('docker-language-server',{
@@ -93,6 +92,16 @@ vim.lsp.config('clangd', {
 --end
 --end,
 --})
+--
+vim.lsp.enable({
+    'lua_ls',
+    'ts_ls',
+    'tailwindcss',
+    'pyright',
+    'docker_language_server',
+    'jsonls',
+    'clangd',
+})
 
 --vim.cmd('set completeopt+=noselect')
 require("luasnip.loaders.from_vscode").lazy_load()

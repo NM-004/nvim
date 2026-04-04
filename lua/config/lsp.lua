@@ -8,8 +8,10 @@ require('mason-tool-installer').setup({
         "clangd",
         --"pylsp",
         "docker-language-server",
+        "docker-compose-language-service",
         "json-lsp",
-        "tailwindcss-language-server"
+        "tailwindcss-language-server",
+        "prisma-language-server"
     }
 })
 
@@ -43,7 +45,7 @@ vim.lsp.config('lua_ls', {
 vim.lsp.config('ts_ls',{
     cmd = {'typescript-language-server', '--stdio'},
     filetypes = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact'},
-    root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git'})
+    root_dir = vim.fs.root(0, {'package.json', 'tsconfig.json', '.git','jsconfig.json'})
 })
 
 vim.lsp.config('tailwindcss-language-server',{
@@ -55,14 +57,15 @@ vim.lsp.config('tailwindcss-language-server',{
 vim.lsp.config('pyright', {
     cmd = { 'pyright-langserver', '--stdio' },  -- this is the correct cmd
     filetypes = { 'python' },
-    root_markers = { 'pyrightconfig.json', 'pyproject.toml', 'setup.py', '.git' },
+    root_markers = { 'pyrightconfig.json', 'pyproject.toml', 'setup.py', '.git','requirements.txt' },
 })
 
 vim.lsp.config('docker-language-server',{
-    cmd = { 'docker-language-server', 'start' },
+    cmd = { 'docker-language-server', 'start','--stdio' },
     --cmd = {'pyright'},
-    filetypes = {'Dockerfile'},
+    filetypes = { 'dockerfile', 'yaml.docker-compose' },
     --root_dir = vim.fs.root(0, {'pyproject.toml', 'setup.py', '.git'})
+    root_markers = { 'Dockerfile','docker-compose.yaml','docker-compose.yml','compose.yaml','compose.yml','docker-bake.json','docker-bake.hcl','docker-bake.override.json','docker-bake.override.hcl',}
 })
 
 vim.lsp.config('json-lsp',{
@@ -74,9 +77,30 @@ vim.lsp.config('json-lsp',{
 
 vim.lsp.config('clangd', {
     cmd = {'clangd'},
-    filetypes = {'c', 'cpp'},
-    root_markers = {'.clangd', 'compile_commands.json'}	
+    filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
+    root_markers = {'.clangd', 'compile_commands.json','.clang-tidy','configure.ac'}	
 })
+
+vim.lsp.config('prisma-language-server', {
+    cmd = { 'prisma-language-server', '--stdio' },  -- this is the correct cmd
+    filetypes = { 'prisma' },
+    root_markers = { 'package.json','.git'}
+})
+
+vim.filetype.add({
+  pattern = {
+    ["docker%-compose%.ya?ml"] = "yaml.docker-compose",
+    ["compose%.ya?ml"] = "yaml.docker-compose",
+  },
+})
+
+vim.lsp.config('docker-compose-language-service', {
+    cmd = { 'docker-compose-langserver', '--stdio' },
+    filetypes = { 'yaml.docker-compose' },
+    root_markers = {'docker-compose.yaml', 'docker-compose.yml', 'compose.yaml', 'compose.yml'},
+    single_file_support = true,
+})
+
 
 --vim.lsp.config('pylsp', {
 --	cmd = {'pylsp'},
@@ -99,8 +123,10 @@ vim.lsp.enable({
     'tailwindcss',
     'pyright',
     'docker_language_server',
+    "docker-compose-language-service",
     'jsonls',
     'clangd',
+    'prisma-language-server'
 })
 
 --vim.cmd('set completeopt+=noselect')

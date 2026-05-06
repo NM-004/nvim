@@ -17,6 +17,7 @@ require("mason-tool-installer").setup({
 		"black",
 		"pylint",
 		"eslint_d",
+		"clang-format",
 	},
 })
 
@@ -128,7 +129,6 @@ vim.lsp.enable({
 	"jsonls",
 	"clangd",
 	"prisma-language-server",
-	"tailwindcss-language-server",
 })
 
 --vim.cmd('set completeopt+=noselect')

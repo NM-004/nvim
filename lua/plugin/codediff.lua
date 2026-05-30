@@ -1,4 +1,4 @@
-return{
-  "esmuellert/codediff.nvim",
-  cmd = "CodeDiff",
+return {
+	"esmuellert/codediff.nvim",
+	cmd = "CodeDiff",
 }

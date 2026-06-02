@@ -18,6 +18,7 @@ require("mason-tool-installer").setup({
 		"pylint",
 		"eslint_d",
 		"clang-format",
+		"jdtls",
 	},
 })
 
@@ -44,6 +45,11 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 	root_markers = { ".luarc.json", ".luarc.jsonc" },
+})
+
+vim.lsp.config("jdtls", {
+	cmd = { "jdtls" },
+	filetypes = { "java", "class" },
 })
 
 vim.lsp.config("ts_ls", {
@@ -129,6 +135,7 @@ vim.lsp.enable({
 	"jsonls",
 	"clangd",
 	"prisma-language-server",
+	"jdtls",
 })
 
 --vim.cmd('set completeopt+=noselect')

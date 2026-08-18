@@ -19,6 +19,7 @@ require("mason-tool-installer").setup({
 		"eslint_d",
 		"clang-format",
 		"jdtls",
+		"rust_analyzer",
 	},
 })
 
@@ -116,6 +117,40 @@ vim.lsp.config("docker-compose-language-service", {
 	single_file_support = true,
 })
 
+vim.lsp.config("rust_analyzer", {
+	cmd = { "rust-analyzer" },
+
+	filetypes = { "rust" },
+
+	root_markers = {
+		"Cargo.toml",
+		"rust-project.json",
+		".git",
+	},
+
+	single_file_support = true,
+
+	settings = {
+		["rust-analyzer"] = {
+			diagnostics = {
+				disabled = {
+					"unlinked-file",
+				},
+			},
+
+			check = {
+				command = "clippy",
+			},
+
+			cargo = {
+				allFeatures = true,
+			},
+		},
+	},
+})
+
+vim.lsp.enable("rust_analyzer")
+
 --  vim.api.nvim_create_autocmd('LspAttach', {
 --      group = vim.api.nvim_create_augroup('my.lsp', {}),
 --      callback = function(args)
@@ -136,6 +171,7 @@ vim.lsp.enable({
 	"clangd",
 	"prisma-language-server",
 	"jdtls",
+	"rust_analyzer",
 })
 
 --vim.cmd('set completeopt+=noselect')
